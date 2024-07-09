@@ -98,7 +98,7 @@ const Room = () => {
     const loadPlayerScript = () => {
         return new Promise((resolve, reject) => {
             const script = document.createElement('script');
-            script.src = '/src/component/playerjs.js';
+            script.src = import.meta.env.DEV ? '/src/component/playerjs.js' : '/fantqw2gv2/assets/playerjs.js' ;
             script.type = 'text/javascript';
             script.onload = () => resolve();
             script.onerror = () => reject(new Error('Failed to load the script'));
