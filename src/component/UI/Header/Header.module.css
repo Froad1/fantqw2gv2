@@ -1,0 +1,114 @@
+header{
+    display: flex;
+    background: #383737;
+    max-width: 100%;
+    height: 8vh;
+    padding: 0 1.1rem;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.overlay{
+  display: none;
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+.logo{
+    display: flex;
+    align-items: flex-end;
+  }
+    .logo__1{
+        font-size: 1.2rem;
+        color: white;
+        text-decoration: none;
+    }
+  
+  .theme__change{
+    display: flex;
+  }
+    .icon{
+      fill: white;
+      cursor: pointer;
+    }
+    .icon:hover{
+        transform: scale(1.2);
+        fill: rgb(89, 89, 89);
+    }
+  .right{
+    gap: 0.5rem;
+    display: flex;
+    height: 100%;
+    align-items: center;
+  }
+    .avatar{
+        border-radius: 50%;
+        min-width: 16px;
+        min-height: 16px;
+        height: 60%;
+        z-index: 12;
+        cursor: pointer;
+    }
+      .avatar:hover{
+        transform: scale(1.2);
+      }
+    .noAvatar_link{
+      border-radius: 50%;
+      min-width: 16px;
+      min-height: 16px;
+      height: 60%;
+      z-index: 12;
+      fill: white;
+      cursor: pointer;
+    }  
+    .noAvatar{
+      width: 100%;
+      height: 100%;
+    }
+      .noAvatar:hover{
+        transform: scale(1.2);
+      }
+
+.profile_info{
+  right: 1.1rem;
+  border-radius: 0 0 1.5rem 1.5rem;
+  top: -30vh;
+  position: absolute;
+  background: #383737;
+  width: 25%;
+  z-index: 12;
+  padding: 1rem;
+  transition: all .3s ease-in-out;
+}
+  .profile_info_container{
+    word-wrap: break-word;
+    position: relative;
+    max-width: 100%;
+    height: 100%;
+  }
+    .nickname{
+      font-size: 1.2rem;
+      margin-bottom: 0.6rem;
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+    .nickname svg{
+      visibility: hidden;
+      fill: white;
+      width: 1.4rem;
+      height: 1.4rem;
+    }
+    .nickname:hover svg{
+      visibility: visible;
+    }
+    .uid{
+      font-size: .8rem;
+    }
+    .signout_button{
+      margin: 0;
+      margin-top: 0.9rem;
+    }

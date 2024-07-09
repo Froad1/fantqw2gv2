@@ -1,0 +1,20 @@
+.room{
+    padding: 2rem 4rem;
+}
+
+@media screen and (max-width: 600px) {
+    .room{
+        padding: 2rem 1rem;
+    }  
+}
+    .control_forms{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        flex-direction: row;
+        margin-top: 1rem;
+    }
+        .control_forms form{
+            display: flex;
+            flex-direction: column;
+        }
