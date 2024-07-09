@@ -23,7 +23,6 @@ const Room = () => {
     const db = firebase.firestore();
     const roomRef = db.collection('rooms').doc(roomId);
 
-
     const firebaseConfig = {
         apiKey: "AIzaSyCxVh1JsLTRMXSLipjB3QSwRqd2o7N6FaA",
         authDomain: "fantqw2g.firebaseapp.com",
@@ -90,10 +89,22 @@ const Room = () => {
 
     useEffect(() => {
         if (roomData) {
-            initializePlayer(roomData.url);
+            loadPlayerScript().then(() => {
+                initializePlayer(roomData.url);
+            });
         }
     }, [roomData]);
 
+    const loadPlayerScript = () => {
+        return new Promise((resolve, reject) => {
+            const script = document.createElement('script');
+            script.src = '/src/component/playerjs.js';
+            script.type = 'text/javascript';
+            script.onload = () => resolve();
+            script.onerror = () => reject(new Error('Failed to load the script'));
+            document.body.appendChild(script);
+        });
+    };
 
     const initializePlayer = (playerurl) =>{
         if (playerurl) {
@@ -145,7 +156,7 @@ const Room = () => {
         url: newUrl,
       })
     };
-    
+
     const exitRoom = () =>{
         roomRef.update({
             users: firebase.firestore.FieldValue.arrayRemove(user.uid)
@@ -185,7 +196,7 @@ const Room = () => {
                         </div>
                     </>
                 )
-                
+
             }
         </div>
       );
