@@ -7,14 +7,16 @@ import Login from './component/pages/Login/Login'
 function App() {
 
   return (
-    <BrowserRouter basename={import.meta.env.DEV ? '/' : '/fantqw2gv2'}>
-      <Header/>
-      <Routes>
-        <Route index element={<Home/>} />
-        <Route path="/room/:roomId" element={<Room/>} />
-        <Route path='/login' element={<Login/>}/>
-      </Routes>
-    </BrowserRouter>
+    <div className='App'>
+      <Router basename={import.meta.env.DEV ? '/' : '/fantqw2gv2'}>
+        <Header/>
+        <Routes>
+          <Route index element={<Home/>} />
+          <Route path="/room/:roomId" element={<Room/>} />
+          <Route path='/login' element={<Login/>}/>
+        </Routes>
+      </Router>
+    </div>
   )
 }
 
